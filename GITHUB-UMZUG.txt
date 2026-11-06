@@ -1,0 +1,112 @@
+FLOW VERSION 11 – GITHUB-UMZUG SCHRITT FÜR SCHRITT
+
+WICHTIG VORHER
+Dieses Paket enthält nur App-Code, eingebaute Bilder und Vorlagen. Deine schon erfassten Aufgaben, Stimmungen und persönlichen Bilder liegen weiterhin im Browser der ALTEN Adresse, nicht in dieser ZIP.
+Eine neue Web-Adresse übernimmt sie nicht automatisch. Du musst exportieren und importieren. GitHub Pages ist Hosting, KEINE Cloud-Synchronisierung deiner Einträge.
+Netlify hat ebenfalls einen dauerhaften Free-Tarif; es ist nicht grundsätzlich ein Probeabo. Den persönlichen Tarif musst du in deinem Netlify-Konto prüfen. Der Umzug kündigt keinen eventuell gebuchten Tarif.
+
+PHASE A – DEINE DATEN SICHERN (AM HANDY)
+1. Alte Flow-Adresse auf dem Handy im bisherigen Opera-Browser öffnen.
+2. Zahnrad > Backup herunterladen. Die JSON-Datei in Downloads aufbewahren.
+3. Prüfen, dass eine Datei gespeichert wurde. Diese Datei enthält ggf. sensible Stimmungs-/Gesundheitstags und Fotos.
+4. NICHT bei GitHub hochladen. Auch nicht in einen öffentlichen Ordner kopieren.
+5. Alte Netlify-Seite und ihr Startbildschirm-Icon zunächst behalten. Noch nichts löschen!
+Wenn du zusätzlich auf dem Laptop Einträge angelegt hast, dort separat exportieren. Stände werden nicht automatisch zusammengeführt; der Import ersetzt einen Stand.
+
+PHASE B – GITHUB-KONTO UND REPOSITORY (AM LAPTOP)
+1. github.com im Browser öffnen.
+2. Falls nötig Sign up wählen, kostenlosen persönlichen Account erstellen und E-Mail bestätigen. GitHub Desktop und Programmierkenntnisse brauchst du nicht.
+3. Nach Anmeldung oben rechts auf + > New repository klicken (alternativ über dein Profil > Your repositories > New).
+4. Repository name: flow
+   Ein Repository ist der Ordner für deinen App-Code auf GitHub.
+5. Visibility: Public auswählen. GitHub Pages ist mit GitHub Free für öffentliche Repositories verfügbar.
+6. Zusätzlichen README nicht anlegen, da das Paket bereits einen enthält. Create repository anklicken.
+
+PHASE C – APP-DATEIEN HOCHLADEN
+1. Dieses ZIP auf dem Laptop herunterladen und entpacken.
+2. Den entpackten Ordner Flow-GitHub öffnen.
+3. Auf der leeren GitHub-Repository-Seite uploading an existing file wählen. Wenn schon Dateien vorhanden sind: Add file > Upload files.
+4. Den INHALT des Flow-GitHub-Ordners auf die Uploadfläche ziehen, NICHT die ZIP und NICHT den darüberliegenden Ordner.
+5. Folgende Dateien müssen direkt im Repository liegen:
+   index.html
+   app.js
+   styles.css
+   sw.js
+   manifest.webmanifest
+   icon-192.png
+   icon-512.png
+   leinenruhe.jpg
+   README.md
+   .nojekyll (optional sichtbar; eine leere Hilfsdatei)
+   .gitignore (falls im Dateimanager sichtbar)
+6. WICHTIG: Keine Datei namens flow-backup-...json mit auswählen. Dein privates Backup gehört nicht auf GitHub.
+7. Unter Commit changes eine Nachricht wie Flow Version 11 eintragen und Commit changes bestätigen. Das speichert den Code.
+8. In der Dateiliste prüfen: index.html liegt direkt auf oberster Ebene, nicht in Flow-GitHub/index.html.
+Wenn die beiden Punktdateien im Dateimanager nicht angezeigt wurden: Die übrigen genannten Dateien reichen für diese App aus; keine komplizierte Konfiguration nötig.
+
+PHASE D – GITHUB PAGES AKTIVIEREN
+1. Im Repository oben Settings öffnen.
+2. Links Pages wählen (unter Code and automation).
+3. Unter Build and deployment > Source: Deploy from a branch.
+4. Branch: main (oder deinen angezeigten Standardbranch), Ordner / (root).
+5. Save anklicken.
+6. Veröffentlichung abwarten. Unter Actions kannst du den Lauf pages build and deployment prüfen.
+7. Wieder Settings > Pages öffnen und Visit site wählen, sobald die Adresse angezeigt wird.
+Typische Adresse: https://DEINBENUTZERNAME.github.io/flow/
+Das ist ein Beispiel, keine schon eingerichtete Adresse. Verwende die von GitHub tatsächlich angezeigte Adresse.
+GitHub Pages und der Code sind öffentlich erreichbar. Deine noch nicht hochgeladenen Browserdaten sind davon getrennt.
+
+PHASE E – DATEN AM HANDY WIEDERHERSTELLEN
+1. Die neue GitHub-Pages-Adresse am Handy in Opera öffnen.
+2. Am Anfang darf die neue Seite leer sein. Das heißt nicht, dass die alten Daten gelöscht sind; die alte Adresse hat weiterhin ihren eigenen Stand.
+3. Zahnrad > Backup importieren > die in Phase A heruntergeladene JSON-Datei auswählen.
+4. Bestätigen, dass der Stand der NEUEN Adresse ersetzt werden darf.
+5. Aufgabenanzahl, Gewohnheiten, Mengen, Unteraufgaben, Stimmungstage, Abzeichen und persönliche Hintergründe prüfen.
+6. Neue Seite neu laden: Daten müssen erhalten bleiben.
+7. Ein neues Backup herunterladen.
+8. Erst wenn alles stimmt, die neue Adresse über Operas Browsermenü zum Startbildschirm hinzufügen. Das bisherige Icon verweist noch auf Netlify.
+9. Alte Netlify-Adresse erst aufgeben, wenn der Umzug wirklich geprüft ist. Ein kostenpflichtiger Tarif müsste separat im Netlify-Konto beendet werden; das Paket ändert keine Abrechnung.
+Keine Browserdaten löschen!
+
+LAPTOP
+Neue Adresse im Browser nutzbar. Für die persönlichen Handy-Daten dort dieselbe Backup-Datei manuell importieren. Es entsteht ein getrennter Stand. Wenn du später auf beiden Geräten Änderungen machst, gibt es KEINE automatische Zusammenführung.
+
+SPÄTERE UPDATES
+Repository > Add file > Upload files > geänderte App-Dateien auf derselben Ebene hochladen > Commit changes. GitHub Pages veröffentlicht erneut. Gleiche Adresse behalten, vorher externes Backup sichern. Niemals persönliche JSON-Backups committen.
+
+WENN ETWAS NICHT FUNKTIONIERT
+404: unter Settings > Pages die tatsächliche Adresse verwenden, auf Veröffentlichung warten, Branch/Root und index.html auf oberster Ebene prüfen.
+Leere/ungestaltete App: app.js und styles.css müssen mit hochgeladen sein. Dateinamen exakt beibehalten.
+Hintergrund fehlt: leinenruhe.jpg mit hochladen.
+Alte Ansicht: online neu laden, ggf. App schließen und erneut öffnen. Keine Browserdaten löschen.
+Import fehlgeschlagen: Originalbackup behalten, alte Seite nicht löschen. Backup-Format und vorhandenen Browser-Speicher prüfen.
+
+NEU IN VERSION 11
+- Jedes geöffnete App-Fenster hat oben rechts ein sichtbares, beim Scrollen erreichbares X. Wischen ist nicht nötig.
+- Der erklärende Hintergrund-Hinweis unter Challenges ist entfernt. Hintergrund-Buttons bleiben.
+- Challenges hat Entdecken und Meine Challenges.
+- Kleiderschrank-Reset: acht einmalige Schritte, beim Start optional zufällig gemischt. Die Reihenfolge wird gespeichert und ändert sich nicht bei jedem Öffnen. Offene Schritte können erneut gemischt werden; erledigte bleiben erhalten.
+- 21 Tage für mich: drei Wochen mit 21 unterschiedlichen Selbstfürsorge-/Ordnungsimpulsen, ein neuer Schritt pro Tag ab Start. Keine Aussehensvorgaben oder Gesundheitsversprechen. Künftige Tage sind in der Übersicht sichtbar, aber noch nicht abhakbar. Verpasstes bleibt offen, kein Straf-Neustart.
+- Saisonale Vorhaben für Frühling, Sommer, Herbst und Winter. Filter nutzt lokale Jahreszeit für Deutschland/Nordhalbkugel. Alle Jahreszeiten sind über Alle Jahreszeiten erreichbar.
+- Vor Start Titel, Schritte, Saison und Belohnung anpassen. Bei der 21-Tage-Vorlage genau 21 Zeilen beibehalten. Eigene Vorhaben über + möglich.
+- Neue Vorhaben sind KEINE täglich wiederholten Gewohnheiten. Jeder Schritt wird nur einmal erledigt und unter journeys gespeichert. Sie erstellen keine zusätzlichen Routine-Duplikate.
+- Heute zeigt pro aktivem Vorhaben den nächsten verfügbaren Schritt unter Deine Vorhaben. Die obere Prozentanzeige zählt ausdrücklich nur Routinen & To-dos; Vorhaben haben einen eigenen Fortschritt.
+- Hintergrund pro Vorhaben über dessen Karte/Detailansicht. Erfolge zählen ein vollständig abgeschlossenes Vorhaben für das Challenge-Abzeichen.
+- Zeitrahmen bei einmaligen Projekten ist eine Orientierung, keine automatische Fehlermeldung nach Fristende.
+- X schließt das Fenster. Formulare erst Speichern/Übernehmen; nicht gespeicherte Formularänderungen werden beim Schließen verworfen. Häkchen, Teilmengen und Projektschritte speichern wie bisher sofort.
+
+BISHERIGES BLEIBT
+Zwölf Muster und Leinenruhe, eigene Bilder, eigene App-Farbwelt, zwölf verschiedene Abzeichenmotive, 40 Tagesgedanken, Stimmung mit vier Segmenten, To-dos/Routinen/Unteraufgaben, Mengen, Kalender, Sortieren am Griff mit Button unten, Archiv und Backups.
+Die separat erstellten sechs Leinen-Bilderserien sind NICHT als neue integrierte Galerie in diesem Paket enthalten; eigene Dateien können weiter ausgewählt werden.
+Kein Cloud-Sync, keine Benachrichtigungen oder nativen Widgets. Bilder lokal verkleinert, in neuen Backups enthalten. Browserbereinigung kann Daten löschen: extern sichern.
+Historische Auswertung anhand aktueller Zeitpläne/Ziele (bis 3660 Tage), kein unveränderliches Tagesarchiv. Änderungen können historische Ergebnisse beeinflussen.
+
+PRÜFUNG
+Syntax und automatisierte Tests zu alten Daten, Import/Export-Rundlauf, zufälligen gespeicherten Projektfolgen, Mischen offener Schritte, Abschlussabzeichen, 21-Tage-Freigabe/Nachholen, vier Jahreszeiten, getrennten Hintergründen, Routinen/To-dos, Unteraufgaben, Sortierung unten und entferntem Hintergrund-Hinweis.
+Zusätzliche Prüfung der relativen Assetpfade für GitHub-Projektseiten.
+Kein echter GitHub-Deploy durch mich und kein vollständiger Touch-/Galerietest auf deinem Android/Opera-Gerät. Die Veröffentlichung nimmst du mit deinem Konto selbst vor.
+
+OFFIZIELLE QUELLEN
+https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
+https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages
+https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/credit-based-pricing-plans/
