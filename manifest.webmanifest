@@ -1,1 +1,24 @@
-{"name":"Flow","short_name":"Flow","description":"Ein ruhiger Moment für deinen Alltag.","start_url":"./","display":"standalone","background_color":"#F5F1E9","theme_color":"#F5F1E9","icons":[{"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]}
+{
+  "name": "FLOW · Ein bisschen mehr bei dir",
+  "short_name": "FLOW",
+  "description": "Ein bisschen mehr bei dir.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F5F1E9",
+  "theme_color": "#F5F1E9",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
