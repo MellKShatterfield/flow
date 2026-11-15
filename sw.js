@@ -1,5 +1,5 @@
 /* FLOW · Update P — service worker cache refresh */
-const CACHE = 'flow-p-repair-1';
+const CACHE = 'flow-s-spacing-1';
 const ASSETS = [
   './',
   './index.html',

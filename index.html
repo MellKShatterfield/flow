@@ -139,6 +139,27 @@ nav button{font-size:10px}
 .task-calendar .taskcal-day{font-family:system-ui,-apple-system,sans-serif;font-weight:400}
 textarea.auto-grow{min-height:42px;height:auto;resize:none;overflow-y:hidden;line-height:1.5;font-family:inherit;font-size:14px;font-weight:400}
 nav .symbol{font-family:system-ui,-apple-system,sans-serif;font-weight:400}
+
+
+/* FLOW · behutsame Abstands- und Rundungsvereinheitlichung (ohne Redesign) */
+:root{
+  --flow-space-xs:6px;
+  --flow-space-sm:10px;
+  --flow-space-md:12px;
+  --flow-space-lg:18px;
+  --flow-card-radius:22px;
+}
+/* Bestehende Farben, Hintergründe, Rahmen und Dekorationen bleiben unverändert. */
+.card,.entry,.daycard,.settings-card,.task-calendar,.mood-cal-wrap,.segment{
+  border-radius:var(--flow-card-radius);
+}
+.card,.entry,.daycard,.settings-card,.task-calendar,.mood-cal-wrap,.segment{
+  margin-bottom:var(--flow-space-md);
+}
+.grid{gap:var(--flow-space-md)}
+.actions,.chips,.customrow{gap:8px}
+.steps,.increments{gap:var(--flow-space-xs)}
+.sectionhead{margin-top:20px;margin-bottom:var(--flow-space-sm)}
 </style><script>(()=>{function show(e){let box=document.getElementById('startup-error');if(!box){document.addEventListener('DOMContentLoaded',()=>show(e),{once:true});return}box.hidden=false;document.getElementById('error-message').textContent='Flow konnte einen Schritt nicht ausführen. Bitte sichere deinen gespeicherten Stand. Browserdaten nicht löschen.';document.getElementById('error-details').textContent=String(e?.message||e||'Unbekannter Startfehler').slice(0,1500)}window.flowFailure=show;window.addEventListener('error',ev=>{if(ev.message)show(ev.error||ev.message)});window.addEventListener('unhandledrejection',ev=>show(ev.reason));document.addEventListener('DOMContentLoaded',()=>{document.getElementById('emergency-export').addEventListener('click',()=>{try{let raw=localStorage.getItem('flow_v1');if(!raw){alert('Unter dieser Adresse liegt noch kein gespeicherter Stand. Für einen Export ggf. die alte Adresse öffnen.');return}let a=document.createElement('a'),u=URL.createObjectURL(new Blob([raw],{type:'application/json'}));a.href=u;a.download='flow-notfallsicherung.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),5000)}catch(e){alert('Der Browser erlaubt gerade keinen Zugriff auf den Speicher.')}});setTimeout(()=>{if(!window.__flowReady&&document.getElementById('startup-error').hidden)show('Die Oberfläche wurde nicht gestartet. Bitte JavaScript und die neue index.html prüfen.')},3000)})})();</script></head><body><header><div class="grow"><div class="eyebrow">Flow · Ein bisschen mehr bei dir</div><h1 id="title">Dein Alltag</h1><div id="subtitle" class="muted">Version-10-Basis · Update R</div></div><button class="iconbutton" data-act="settings" aria-label="Einstellungen">⚙</button></header><main><section class="notice" id="startup-error" hidden role="alert"><h2>Flow braucht kurz Hilfe.</h2><p id="error-message"></p><pre id="error-details"></pre><button type="button" class="pill" id="emergency-export">Gespeicherte Daten sichern</button></section><div id="view"><section class="card"><h2>Ein ruhiger Moment …</h2><p>Flow wird gestartet.</p></section></div><noscript><section class="notice">Bitte JavaScript aktivieren, um die App zu verwenden.</section></noscript></main><button class="fab" data-act="add" aria-label="Hinzufügen">+</button><nav aria-label="Hauptmenü"><div class="navinner" id="nav"></div></nav><div class="modal" id="modal" hidden><section class="sheet" role="dialog" aria-modal="true" aria-label="Flow Detailfenster"><div class="dialogbar"><small>Dein Flow</small><button type="button" class="x" data-act="close" aria-label="Fenster schließen">×</button></div><div id="dialog-content"></div></section></div><script>
 'use strict';const $=s=>document.querySelector(s),KEY='flow_v1';let db,tab='today',sorting=false,category='season',seasonChoice='current',drag=null,lastFocus,ctx=null,month='',moodMonth='',moodStatPeriod='week',moodExpanded=false,storageFault=false,bg=null;
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,9),color=v=>/^#[0-9a-f]{6}$/i.test(v||'')?v:'#A9B99C',obj=v=>v&&typeof v==='object'&&!Array.isArray(v)?v:{};
