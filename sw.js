@@ -1,5 +1,5 @@
-/* FLOW · Update Q · navigation fix */
-const CACHE = 'flow-q-fix-1';
+/* FLOW · Update P — service worker cache refresh */
+const CACHE = 'flow-p-repair-1';
 const ASSETS = [
   './',
   './index.html',
